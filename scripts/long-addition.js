@@ -55,7 +55,7 @@ function long_addition(input1, input2){
 	// Go through the solution steps
 	var stepList = [];
 	stepList.push({
-		'description': "Start by setting up the problem in a table.",
+		'description': "Start by setting up the problem in a table, with the larger number on top.",
 		'latex': complete_addition_latex(input1_latex, input2_latex, output_latex)
 		});
 	for (var digit_step = 0; digit_step < final_len; digit_step++){
