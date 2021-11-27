@@ -62,7 +62,10 @@ function clearPage(){
 	document.querySelector('#worksheet').innerHTML='';
 }
 
-function openProblemWorksheet(){
+function openProblemWorksheet(showAnswers){
 	var queryString = encodeURIComponent(JSON.stringify(problems));
-	window.open("worksheet/index.html?problem="+queryString);
+	var url = "worksheet/index.html?";
+	if(showAnswers) url+= "answers&";
+	url += "problem="+queryString;
+	window.open(url);
 }
