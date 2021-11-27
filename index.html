@@ -7,7 +7,7 @@
 		<script src="scripts/math-problems.js"></script>
 		<template id="problem-template">
 			<div class="problem">
-				<h3 class="problem-title"></div>
+				<h3 class="problem-title"></h3>
 				<div class="problem-steps"></div>
 				<hr>
 			</div>
@@ -38,10 +38,11 @@
 		</div>
 		<br>
 		<div>
-			<button onclick="document.querySelector('#worksheet').innerHTML='';">Clear</button>
+			<button onclick="clearPage();">Clear</button>
 		</div>
 		<hr>
 		<h2>Worksheet</h2>
+		<button onclick="openProblemWorksheet();">Open Problem Worksheet</button>
 		<div id="worksheet">
 		</div>
 	</body>

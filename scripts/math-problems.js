@@ -1,15 +1,12 @@
 // Generating Math Problem Worksheets
 
 
+var problems = [];
+
 window.addEventListener("load", main, false);
 
 async function main(){
-	var max = 999;
-	var min = 1;
-	var input1 = Math.floor(Math.random() * (max - min + 1) + min);
-	var input2 = Math.floor(Math.random() * (max - min + 1) + min);
-	var stepList = long_addition(input1, input2);
-	addToPage(stepList);
+	addMultipleProblems();
 }
 
 
@@ -36,6 +33,7 @@ function addMultipleProblems(){
 
 function addProblem(input1, input2){
 	var stepList = long_addition(input1, input2);
+	problems.push(stepList);
 	addToPage(stepList);
 }
 
@@ -57,4 +55,14 @@ function addToPage(stepList){
 	
 	document.querySelector('#worksheet').appendChild(problem_div);
 	MathJax.typeset();
+}
+
+function clearPage(){
+	problems = [];
+	document.querySelector('#worksheet').innerHTML='';
+}
+
+function openProblemWorksheet(){
+	var queryString = encodeURIComponent(JSON.stringify(problems));
+	window.open("worksheet/index.html?problem="+queryString);
 }
