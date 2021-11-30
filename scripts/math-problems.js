@@ -10,34 +10,9 @@ async function main(){
 }
 
 
-function addOneProblem(){
-	var input1 = parseInt(document.querySelector("#input1").value);
-	var input2 = parseInt(document.querySelector("#input2").value);
-	console.log(input1);
-	addProblem(input1, input2);
-}
-
-function addMultipleProblems(){
-	var input1_min = parseInt(document.querySelector("#input1-min").value);
-	var input1_max = parseInt(document.querySelector("#input1-max").value);
-	var input2_min = parseInt(document.querySelector("#input2-min").value);
-	var input2_max = parseInt(document.querySelector("#input2-max").value);
-	var num = parseInt(document.querySelector("#number-new-problems").value);
-	
-	for(var i=0; i<num; i++){
-		var input1 = Math.floor(Math.random() * (input1_max - input1_min + 1) + input1_min);
-		var input2 = Math.floor(Math.random() * (input2_max - input2_min + 1) + input2_min);
-		addProblem(input1, input2);
-	}
-}
-
-function addProblem(input1, input2){
-	var stepList = long_addition(input1, input2);
+function addProblem(stepList){
 	problems.push(stepList);
-	addToPage(stepList);
-}
 
-function addToPage(stepList){
 	var problem_div = document.querySelector('#problem-template').content.cloneNode(true);
 	problem_div.querySelector('.problem-title').textContent = "Problem #"+(document.getElementsByClassName('problem').length+1);
 	
@@ -64,7 +39,7 @@ function clearPage(){
 
 function openProblemWorksheet(showAnswers){
 	var queryString = encodeURIComponent(JSON.stringify(problems));
-	var url = "worksheet/index.html?";
+	var url = "../../worksheet?";
 	if(showAnswers) url+= "answers&";
 	url += "problem="+queryString;
 	window.open(url);

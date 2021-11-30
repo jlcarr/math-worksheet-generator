@@ -1,6 +1,27 @@
 // Long Addition Solved Step-By-Step
 
 
+function addOneProblem(){
+	var input1 = parseInt(document.querySelector("#input1").value);
+	var input2 = parseInt(document.querySelector("#input2").value);
+	addProblem(long_addition(input1, input2));
+}
+
+function addMultipleProblems(){
+	var input1_min = parseInt(document.querySelector("#input1-min").value);
+	var input1_max = parseInt(document.querySelector("#input1-max").value);
+	var input2_min = parseInt(document.querySelector("#input2-min").value);
+	var input2_max = parseInt(document.querySelector("#input2-max").value);
+	var num = parseInt(document.querySelector("#number-new-problems").value);
+	
+	for(var i=0; i<num; i++){
+		var input1 = Math.floor(Math.random() * (input1_max - input1_min + 1) + input1_min);
+		var input2 = Math.floor(Math.random() * (input2_max - input2_min + 1) + input2_min);
+		addProblem(long_addition(input1, input2));
+	}
+}
+
+
 function long_addition(input1, input2){
 	// ensure correct length orientation
 	if (input2 > input1){

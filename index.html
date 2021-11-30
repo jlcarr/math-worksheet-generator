@@ -1,50 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Math Problem Worksheet Generator</title>
+		<title>Math Problem Worksheet Generators</title>
 		<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-		<script src="scripts/long-addition.js"></script>
-		<script src="scripts/math-problems.js"></script>
-		<template id="problem-template">
-			<div class="problem">
-				<h3 class="problem-title"></h3>
-				<div class="problem-steps"></div>
-				<hr>
-			</div>
-		</template>
-		<template id="problem-step-template">
-			<div class="problem-step">
-				<div class="step-title"></div>
-				<div class="step-description"></div>
-				<div class="step-math"></div>
-			</div>
-		</template>
 	</head>
 	<body>
-		<h1>Math Problem Worksheet Generator</h1>
-		<h2>Setup</h2>
-		<h3>Add One</h3>
-		<div class="input-set">
-			<b>Input 1</b>: <input type="number" id="input1"><br>
-			<b>+ Input 2</b>: <input type="number" id="input2"><br>
-			<button onclick="addOneProblem();">Generate</button>
-		</div>
-		<h3>Generate Multiple</h3>
-		<div class="input-set">
-			<b>Input 1 range</b>: min: <input type="number" id="input1-min" value="1"> max:<input type="number" id="input1-max" value="999"><br>
-			<b>+ Input 2 range</b>: min: <input type="number" id="input2-min" value="1"> max:<input type="number" id="input2-max" value="999"><br>
-			<b>Number of new problems</b>: <input type="number" id="number-new-problems" value="1"><br>
-			<button onclick="addMultipleProblems();">Generate</button>
-		</div>
-		<br>
-		<div>
-			<button onclick="clearPage();">Clear</button>
-		</div>
-		<hr>
-		<h2>Worksheet</h2>
-		<button onclick="openProblemWorksheet(false);">Open Problem Worksheet</button>
-		<button onclick="openProblemWorksheet(true);">Open Answer Sheet</button>
-		<div id="worksheet">
+		<h1>Math Problem Worksheet Generators</h1>
+		<h2>Arithmetic</h2>
+		<a href="/problems/long-addition">Long Addition</a>
 		</div>
 	</body>
 </html>
