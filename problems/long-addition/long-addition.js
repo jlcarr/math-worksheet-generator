@@ -24,7 +24,7 @@ function addMultipleProblems(){
 
 function long_addition(input1, input2){
 	// ensure correct length orientation
-	if (input2 > input1){
+	if (parseInt(input2) > parseInt(input1)){
 		var temp = input1;
 		input1 = input2;
 		input2 = temp;
